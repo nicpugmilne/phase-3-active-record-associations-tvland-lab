@@ -74,7 +74,7 @@ see what you need to do for the models.**
   as an example again, the returned string should look like the following:
 
   ```ruby
-  tyrion.catchphrase = 'A Lannister always pays his debts'
+  tyrion.catchphrase = "A Lannister always pays his debts"
   tyrion.say_that_thing_you_say
   #=> 'Tyrion Lannister always says: A Lannister always pays his debts'
   ```
@@ -99,8 +99,13 @@ see what you need to do for the models.**
   ```ruby
   peter = Actor.create(first_name: "Peter", last_name: "Dinklage")
   thrones = Show.create(name: "Game of Thrones")
-  tyrion = Character.create(name: "Tyrion Lannister", actor_id: peter.id, show_id: thrones.id)
-
+  tyrion =
+    Character.create(
+      name: "Tyrion Lannister",
+      actor_id: peter.id,
+      show_id: thrones.id
+    )
+  
   peter.list_roles
   # ['Tyrion Lannister - Game of Thrones']
   ```
